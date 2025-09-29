@@ -11,10 +11,10 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "O nama", href: "#about" },
-    { name: "Galerija", href: "#gallery" },
-    { name: "Pjesme", href: "#chants" },
-    { name: "Događaji", href: "#events" }
+    { name: "Rreth Nesh", href: "#about" },
+    { name: "Galeria", href: "#gallery" },
+    { name: "Këngët", href: "#chants" },
+    { name: "Ngjarjet", href: "#events" }
   ];
 
   return (
@@ -35,18 +35,18 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-foreground/70 leading-relaxed mb-6 max-w-md">
-              Više od 25 godina nosimo crveno-crne boje s ponosom. 
-              Naša strast, naša tradicija, naša porodica - to smo mi, Hajduçt ultras.
+              Më shumë se 25 vjet mbajmë ngjyrat e kuqe dhe të zeza me krenari. 
+              Pasioni ynë, tradita jonë, familja jonë - kjo jemi ne, Hajduçt ultras.
             </p>
             <div className="flex items-center gap-2 text-sm text-foreground/60">
               <Heart className="w-4 h-4 text-primary" />
-              <span>Jedan klub, jedna ljubav, zauvijek</span>
+              <span>Një klub, një dashuri, përgjithmonë</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-ultras text-lg text-primary mb-4">BRZE VEZE</h3>
+            <h3 className="font-ultras text-lg text-primary mb-4">LIDHJE TË SHPEJTA</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -71,15 +71,15 @@ const Footer = () => {
 
           {/* Contact & Social */}
           <div>
-            <h3 className="font-ultras text-lg text-primary mb-4">KONTAKT</h3>
+            <h3 className="font-ultras text-lg text-primary mb-4">KONTAKTI</h3>
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-sm text-foreground/70">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@hajduct.hr</span>
+                <span>info@hajduct.al</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-foreground/70">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+385 91 234 5678</span>
+                <span>+383 44 123 456</span>
               </div>
             </div>
             
@@ -104,12 +104,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-foreground/60">
-            &copy; 2024 Hajduçt Ultras. Sva prava pridržana.
+            &copy; 2024 Hajduçt Ultras. Të gjitha të drejtat të rezervuara.
           </div>
           <div className="flex items-center gap-4 text-sm text-foreground/60">
-            <a href="#" className="hover:text-primary transition-ultras">Pravila korištenja</a>
+            <a href="#" className="hover:text-primary transition-ultras">Rregullat e përdorimit</a>
             <span>•</span>
-            <a href="#" className="hover:text-primary transition-ultras">Privatnost</a>
+            <a href="#" className="hover:text-primary transition-ultras">Privatësia</a>
           </div>
         </div>
       </div>

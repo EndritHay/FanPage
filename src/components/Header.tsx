@@ -7,10 +7,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "O nama", href: "#about", icon: Users },
-    { name: "Galerija", href: "#gallery", icon: Camera },
-    { name: "Pjesme", href: "#chants", icon: Music },
-    { name: "Događaji", href: "#events", icon: Calendar },
+    { name: "Rreth Nesh", href: "#about", icon: Users },
+    { name: "Galeria", href: "#gallery", icon: Camera },
+    { name: "Këngët", href: "#chants", icon: Music },
+    { name: "Ngjarjet", href: "#events", icon: Calendar },
   ];
 
   return (
@@ -42,7 +42,7 @@ const Header = () => {
               </a>
             ))}
             <Button variant="ultras" className="ml-4">
-              PRIDRUŽI SE
+              BASHKOHU
             </Button>
           </div>
 
@@ -73,7 +73,7 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="ultras" className="mt-2">
-                PRIDRUŽI SE
+                BASHKOHU
               </Button>
             </div>
           </div>

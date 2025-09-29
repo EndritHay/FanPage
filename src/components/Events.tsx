@@ -6,46 +6,46 @@ const Events = () => {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Derbi - Hajduk vs Dinamo",
+      title: "Derbiu - Hajduk kundër Dinamos",
       date: "15.04.2024",
       time: "20:00",
-      location: "Poljud Stadium",
-      type: "Utakmica",
-      description: "Najveći derbi sezone! Svi na Poljud da podržimo naše!",
+      location: "Stadiumi Poljud",
+      type: "Ndeshje",
+      description: "Derbiu më i madh i sezonit! Të gjithë në Poljud për të mbështetur tanët!",
       attendees: 245
     },
     {
       id: 2,
-      title: "Koreografija 'Crveno Srce'",
+      title: "Koreografia 'Zemra e Kuqe'",
       date: "20.04.2024", 
       time: "18:00",
-      location: "Skupština - Kavana Central",
-      type: "Priprema",
-      description: "Priprema nove koreografije za finale kupa. Trebamo sve ruke!",
+      location: "Tubim - Kafeja Central",
+      type: "Përgatitje",
+      description: "Përgatitje e koreografisë së re për finalin e kupës. Na duhen të gjitha duart!",
       attendees: 89
     },
     {
       id: 3,
-      title: "Gostovanje - Split away",
+      title: "Transferta - Split away",
       date: "28.04.2024",
       time: "16:00", 
-      location: "Autobus stanica",
-      type: "Gostovanje",
-      description: "Organiziran prijevoz za gostovanje u Splitu. Registracija obavezna!",
+      location: "Stacioni i autobusëve",
+      type: "Transfertë",
+      description: "Transport i organizuar për transfertën në Split. Regjistrimi i detyrueshëm!",
       attendees: 156
     }
   ];
 
   const pastEvents = [
     {
-      title: "25. godišnjica Hajduçt",
+      title: "25 vjetori i Hajduçt",
       date: "01.03.2024",
-      description: "Oslava četvrt stoljeća postojanja naše grupe."
+      description: "Festimi i një çereku shekulli të ekzistencës së grupit tonë."
     },
     {
-      title: "Zimski turnir",
+      title: "Turneu dimëror",
       date: "15.02.2024", 
-      description: "Tradicionalni turnir u organizaciji ultras grupa."
+      description: "Turneu tradicional në organizimin e grupeve ultras."
     }
   ];
 
@@ -54,12 +54,12 @@ const Events = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-ultras text-4xl md:text-5xl mb-4 ultras-heading text-primary">
-            DOGAĐAJI
+            NGJARJET
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Pratite naše nadolazeće događaje i pridružite se ultras zajednici. 
-            Svaki događaj je prilika da pokažemo našu strast!
+            Ndiqni ngjarjet tona të ardhshme dhe bashkohuni me komunitetin ultras. 
+            Çdo ngjarje është një mundësi për të treguar pasionin tonë!
           </p>
         </div>
 
@@ -67,7 +67,7 @@ const Events = () => {
         <div className="mb-16">
           <h3 className="font-ultras text-2xl text-primary mb-8 flex items-center gap-3">
             <Calendar className="w-6 h-6" />
-            NADOLAZEĆI DOGAĐAJI
+            NGJARJET E ARDHSHME
           </h3>
           
           <div className="space-y-6">
@@ -112,12 +112,12 @@ const Events = () => {
                     <div className="text-center">
                       <div className="flex items-center text-foreground/60 mb-2">
                         <Users className="w-4 h-4 mr-2" />
-                        {event.attendees} prijavljenih
+                        {event.attendees} të regjistruar
                       </div>
                     </div>
                     <div className="flex gap-2">
                       <Button variant="ultras">
-                        PRIJAVIŤ SE
+                        REGJISTROHU
                       </Button>
                       <Button variant="ultras-outline" size="icon">
                         <Flag className="w-4 h-4" />
@@ -135,7 +135,7 @@ const Events = () => {
           <div>
             <h3 className="font-ultras text-2xl text-primary mb-6 flex items-center gap-3">
               <Clock className="w-6 h-6" />
-              PROŠLI DOGAĐAJI
+              NGJARJET E KALUARA
             </h3>
             <div className="space-y-4">
               {pastEvents.map((event, index) => (
@@ -155,13 +155,13 @@ const Events = () => {
 
           {/* Event submission */}
           <div className="bg-gradient-dark rounded-lg p-6">
-            <h3 className="font-ultras text-xl text-primary mb-4">PREDLOŽI DOGAĐAJ</h3>
+            <h3 className="font-ultras text-xl text-primary mb-4">PROPONO NJË NGJARJE</h3>
             <p className="text-foreground/80 mb-6 text-sm">
-              Imaš ideju za novi događaj? Organiziraš nešto zanimljivo? 
-              Podijeli s nama i bit će objavljeno!
+              Ke një ide për një ngjarje të re? Po organizon diçka interesante? 
+              Na ndaj me ne dhe do të publikohet!
             </p>
             <Button variant="ultras" className="w-full">
-              POŠALJI PRIJEDLOG
+              DËRGO PROPOZIM
             </Button>
           </div>
         </div>

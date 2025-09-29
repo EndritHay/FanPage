@@ -5,12 +5,12 @@ import { Camera, Play, Calendar } from "lucide-react";
 const Gallery = () => {
   // Mock gallery data - in real app would come from backend
   const photos = [
-    { id: 1, title: "Derbi protiv Zvezde", date: "15.03.2024", type: "photo" },
-    { id: 2, title: "Koreografija 'Crveno-Crni Ponos'", date: "08.03.2024", type: "photo" },
-    { id: 3, title: "Finale Kupa", date: "22.02.2024", type: "video" },
-    { id: 4, title: "Navijanje u gostima", date: "10.02.2024", type: "photo" },
-    { id: 5, title: "Proslava 25. godina", date: "01.02.2024", type: "video" },
-    { id: 6, title: "Zimski turnir", date: "15.01.2024", type: "photo" },
+    { id: 1, title: "Derbiu kundër Partizanit", date: "15.03.2024", type: "photo" },
+    { id: 2, title: "Koreografia 'Krenaria e Kuqe-Zezë'", date: "08.03.2024", type: "photo" },
+    { id: 3, title: "Finali i Kupës", date: "22.02.2024", type: "video" },
+    { id: 4, title: "Tifozëria në transfertë", date: "10.02.2024", type: "photo" },
+    { id: 5, title: "Festimi i 25 vjetëve", date: "01.02.2024", type: "video" },
+    { id: 6, title: "Turneu dimëror", date: "15.01.2024", type: "photo" },
   ];
 
   return (
@@ -18,12 +18,12 @@ const Gallery = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-ultras text-4xl md:text-5xl mb-4 ultras-heading text-primary">
-            GALERIJA
+            GALERIA
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Najljepši trenuci naše ultras zajednice. Svaki meč, svaka koreografija, 
-            svaki trenutak strasti zauvijek je zabilježen u našim srcima.
+            Momentet më të bukura të komunitetit tonë ultras. Çdo ndeshje, çdo koreografi, 
+            çdo moment pasioni është regjistruar përgjithmonë në zemrat tona.
           </p>
         </div>
 
@@ -69,19 +69,19 @@ const Gallery = () => {
         <div className="text-center mt-12">
           <Button variant="ultras-outline" size="lg">
             <Camera className="w-5 h-5 mr-2" />
-            POGLEDAJ SVE
+            SHIKO TË GJITHA
           </Button>
         </div>
 
         {/* Call to action */}
         <div className="mt-16 bg-gradient-dark rounded-lg p-8 text-center">
-          <h3 className="font-ultras text-2xl text-primary mb-4">POŠALJI SVOJE FOTOGRAFIJE</h3>
+          <h3 className="font-ultras text-2xl text-primary mb-4">DËRGO FOTOGRAFITË E TUA</h3>
           <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
-            Imaš odličnu fotografiju s utakmice ili našeg okupljanja? 
-            Pošalji nam je i bit će dio naše službene galerije!
+            Ke një fotografi të shkëlqyer nga ndeshja apo nga tubimi ynë? 
+            Na e dërgo dhe do të jetë pjesë e galerisë sonë zyrtare!
           </p>
           <Button variant="ultras">
-            POŠALJI FOTO
+            DËRGO FOTO
           </Button>
         </div>
       </div>

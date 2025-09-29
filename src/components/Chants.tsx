@@ -6,47 +6,47 @@ const Chants = () => {
   const chants = [
     {
       id: 1,
-      title: "Hajduçt Himna",
-      category: "Himna",
+      title: "Himni i Hajduçt",
+      category: "Himn",
       icon: Crown,
-      lyrics: "Crveno i crno u srcu nam gori\nHajduçt naš klub, naša ljubav je prava\nNikad nećemo stati, kroz pobjedu i poraz\nJedan klub, jedna ljubav, zauvijek!"
+      lyrics: "E kuqe e zeza në zemër na djeg\nHajduçt klubi ynë, dashuria jonë është e vërtetë\nKurrë nuk do ndalemi, nëpër fitore e humbje\nNjë klub, një dashuri, përgjithmonë!"
     },
     {
       id: 2,
-      title: "Mi Smo Tu",
-      category: "Bodrenje",
+      title: "Ne Jemi Këtu",
+      category: "Inkurajim",
       icon: Volume2,
-      lyrics: "Mi smo tu, uvijek tu\nZa naš klub, kroz sve što život donosi\nGlasno pjevaj, nikad ne stani\nHajduçt je naš ponos!"
+      lyrics: "Ne jemi këtu, gjithmonë këtu\nPër klubin tonë, nëpër gjithçka që jeta sjell\nKëndo me zë të lartë, mos ndalo kurrë\nHajduçt është krenaria jonë!"
     },
     {
       id: 3,
-      title: "Crveno-Crni Ponos",
-      category: "Ponos",
+      title: "Krenaria e Kuqe-Zezë",
+      category: "Krenari",
       icon: Heart,
-      lyrics: "Crveno i crno nose se s ponosom\nNaša boja, naša snaga\nNi oluja neće nas zaustaviti\nHajduçt do kraja!"
+      lyrics: "E kuqe dhe e zeza mbahen me krenari\nNgjyra jonë, forca jonë\nAs stuhia nuk do na ndalojë\nHajduçt deri në fund!"
     },
     {
       id: 4,
-      title: "Stadion Grmi",
-      category: "Atmosfera",
+      title: "Stadiumi Gjëmon",
+      category: "Atmosferë",
       icon: Music,
-      lyrics: "Stadion grmi kada mi zapjevamo\nNaša pjesma do neba se diže\nProtivnici drhte kad nas čuju\nHajduçt ultras, nikad ne miruje!"
+      lyrics: "Stadiumi gjëmon kur ne këndojmë\nKënga jonë ngrihet deri në qiell\nKundërshtarët dridhen kur na dëgjojnë\nHajduçt ultras, kurrë nuk pushon!"
     }
   ];
 
-  const categories = ["Sve", "Himna", "Bodrenje", "Ponos", "Atmosfera"];
+  const categories = ["Të gjitha", "Himn", "Inkurajim", "Krenari", "Atmosferë"];
 
   return (
     <section id="chants" className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-ultras text-4xl md:text-5xl mb-4 ultras-heading text-primary">
-            NAŠE PJESME
+            KËNGËT TONA
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Naše pjesme su duša stadiona. Svaka riječ nosi strast, 
-            svaki ton prenosi ljubav prema našem klubu.
+            Këngët tona janë shpirtra e stadiumit. Çdo fjalë bart pasion, 
+            çdo tingull transmeton dashurinë për klubin tonë.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ const Chants = () => {
           {categories.map((category) => (
             <Button 
               key={category}
-              variant={category === "Sve" ? "ultras" : "ultras-ghost"}
+              variant={category === "Të gjitha" ? "ultras" : "ultras-ghost"}
               size="sm"
             >
               {category}
@@ -93,10 +93,10 @@ const Chants = () => {
               <div className="flex gap-2 mt-4">
                 <Button variant="ultras-ghost" size="sm">
                   <Volume2 className="w-4 h-4 mr-2" />
-                  POSLUŠAJ
+                  DËGJOJE
                 </Button>
                 <Button variant="ghost" size="sm">
-                  PODIJELI
+                  NDAJ
                 </Button>
               </div>
             </Card>
@@ -107,18 +107,18 @@ const Chants = () => {
         <div className="bg-card/30 rounded-lg p-8 border border-primary/20">
           <div className="text-center">
             <Music className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="font-ultras text-2xl text-primary mb-4">PREDLOŽI NOVU PJESMU</h3>
+            <h3 className="font-ultras text-2xl text-primary mb-4">PROPONO NJË KËNGË TË RE</h3>
             <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
-              Imaš ideju za novu pjesmu koja će odzvanjati stadionom? 
-              Pošalji nam svoj prijedlog i možda će postati dio naše kolekcije!
+              Ke një ide për një këngë të re që do të jehojë në stadium? 
+              Na e dërgo propozimin dhe mund të bëhet pjesë e koleksionit tonë!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="ultras">
-                POŠALJI PRIJEDLOG
+                DËRGO PROPOZIM
               </Button>
               <Button variant="ultras-outline">
                 <Music className="w-4 h-4 mr-2" />
-                SVE PJESME
+                TË GJITHA KËNGËT
               </Button>
             </div>
           </div>

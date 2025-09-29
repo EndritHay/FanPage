@@ -5,23 +5,23 @@ const About = () => {
   const values = [
     {
       icon: Heart,
-      title: "STRAST",
-      description: "Naša ljubav prema klubu je bezgranična. Svaki meč, svaka pobjeda, svaki poraz - dijelimo sve zajedno."
+      title: "PASIONI",
+      description: "Dashuria jonë për klubin është e pakufishme. Çdo ndeshje, çdo fitore, çdo humbje - i ndajmë të gjitha së bashku."
     },
     {
       icon: Flag,
-      title: "TRADICIJA", 
-      description: "Više od 25 godina nosimo crveno-crne boje s ponosom. Naša tradicija se prenosi s koljena na koljeno."
+      title: "TRADITA", 
+      description: "Më shumë se 25 vjet mbajmë ngjyrat e kuqe dhe të zeza me krenari. Tradita jonë kalon nga brezi në brez."
     },
     {
       icon: Users,
-      title: "BRATSTVO",
-      description: "Nismo samo navijači - mi smo porodica. Jedan za sve, svi za jedan. To je naš put, to je naš život."
+      title: "VËLLAZËRIA",
+      description: "Ne nuk jemi vetëm tifozë - ne jemi familje. Një për të gjithë, të gjithë për një. Kjo është rruga jonë, kjo është jeta jonë."
     },
     {
       icon: Trophy,
-      title: "POBJEDA",
-      description: "Zajedno slavimo pobjede i zajedno prolazimo kroz poraze. Naša snaga je u jedinstvu."
+      title: "FITORJA",
+      description: "Së bashku festojmë fitoret dhe së bashku kalojmë nëpër humbjet. Forca jonë është në bashkim."
     }
   ];
 
@@ -30,13 +30,13 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-ultras text-4xl md:text-5xl mb-4 ultras-heading text-primary">
-            O NAMA
+            RRETH NESH
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
-            Hajduçt nije samo grupa navijača - mi smo zajednica koja živi i diše za svoj klub. 
-            Naša priča počinje davne 1998. godine kad je skupina mladih entuzijasta odlučila 
-            stvoriti nešto posebno. Danas smo ponosna ultras grupa koja čuva tradiciju i gradi budućnost.
+            Hajduçt nuk është thjesht një grup tifozësh - ne jemi një komunitet që jeton dhe thithë për klubin tonë. 
+            Historia jonë fillon në vitin 1998 kur një grup të rinjsh entuziastë vendosën 
+            të krijojnë diçka të veçantë. Sot jemi një grup krenar ultras që ruajmë traditën dhe ndërtojmë të ardhmen.
           </p>
         </div>
 
@@ -65,22 +65,22 @@ const About = () => {
         <div className="mt-16 bg-card/30 rounded-lg p-8 border border-primary/20">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="font-ultras text-2xl text-primary mb-4">NAŠA MISIJA</h3>
+              <h3 className="font-ultras text-2xl text-primary mb-4">MISIONI YNË</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Stvaramo atmosferu koja inspirira igrače i intimidira protivnike. 
-                Naši napjevi odzvanjaju stadionom, naše zastave vijore se ponosno, 
-                a naša podrška nikad ne prestaje.
+                Ne krijojmë atmosferën që frymëzon lojtarët dhe intimidon kundërshtarët. 
+                Këngët tona jehojnë në stadium, flamujt tanë valëviten krenarë, 
+                dhe mbështetja jonë nuk pushon kurrë.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                Učimo mlade generacije što znači biti pravi navijač - s poštovanjem, 
-                strašću i nepokolebljivom vjerom u naš klub.
+                I mësojmë brezat e rinj se çfarë do të thotë të jesh tifoz i vërtetë - me respekt, 
+                pasion dhe besim të palëkundshëm në klubin tonë.
               </p>
             </div>
             <div className="text-center">
               <div className="inline-block p-6 bg-gradient-ultras rounded-lg shadow-ultras">
-                <div className="font-ultras text-4xl text-white mb-2">JEDAN</div>
+                <div className="font-ultras text-4xl text-white mb-2">NJË</div>
                 <div className="font-ultras text-4xl text-white mb-2">KLUB</div>
-                <div className="font-ultras text-4xl text-white">JEDNA LJUBAV</div>
+                <div className="font-ultras text-4xl text-white">NJË DASHURI</div>
               </div>
             </div>
           </div>
