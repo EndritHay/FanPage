@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: Flag,
       title: "TRADITA", 
-      description: "Më shumë se 25 vjet mbajmë ngjyrat e kuqe dhe të zeza me krenari. Tradita jonë kalon nga brezi në brez."
+      description: "Më shumë se 88 vjet egzistencë mbajmë ngjyrat e klubit dhe të kombëtares me krenari. Tradita jonë kalon nga brezi në brez."
     },
     {
       icon: Users,
@@ -34,9 +34,12 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
-            Hajduçt nuk është thjesht një grup tifozësh - ne jemi një komunitet që jeton dhe thithë për klubin tonë. 
-            Historia jonë fillon në vitin 1998 kur një grup të rinjsh entuziastë vendosën 
-            të krijojnë diçka të veçantë. Sot jemi një grup krenar ultras që ruajmë traditën dhe ndërtojmë të ardhmen.
+          Çdo qytet që ka një histori, mundohet ta ruajë dhe ta kultivojë atë, jo vetëm në aspektin politik, shoqëror e kulturor, por edhe në atë sportiv. Edhe pse Presheva nuk ka pasur ndonjë arritje të veçantë në përmasa të mëdha, futbolli si sporti më popullor ka qenë gjithmonë pjesë e pandashme e jetës sportive të këtij qyteti.
+
+Kur flitet për futbollin preshevar, padyshim mendja shkon te klubi i futbollit “Hajduku”, një emër i lidhur ngushtë me traditën dhe identitetin sportiv të Preshevës. Ky klub u themelua dhe u regjistrua rreth vitit 1937, duke qenë klubi i parë i organizuar në këtë trevë  pothuajse bashkëmoshatar me KF “Hajduku” nga Spliti. Këtë e dëshmojnë gojëdhënat dhe kujtimet e njohësve të hershëm të futbollit në Preshevë.
+
+Fatkeqësisht, pas një historie të gjatë e të pasur, klubi u shua në vitin 2011, duke lënë një boshllëk të madh në sportin e këtij qyteti. Megjithatë, edhe sot po bëhen përpjekje të vazhdueshme për rikthimin e tij, në mënyrë që “Hajduku” të marrë sërish vendin që i takon në historinë sportive të Preshevës.
+
           </p>
         </div>
 
@@ -72,8 +75,8 @@ const About = () => {
                 dhe mbështetja jonë nuk pushon kurrë.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                I mësojmë brezat e rinj se çfarë do të thotë të jesh tifoz i vërtetë - me respekt, 
-                pasion dhe besim të palëkundshëm në klubin tonë.
+                I mësojmë brezat e rinj se çfarë do të thotë të jesh tifoz i vërtetë me
+                pasion dhe besim të palëkundshëm në klubin dhe kombëtaren tonë.
               </p>
             </div>
             <div className="text-center">

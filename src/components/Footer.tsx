@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Facebook, Instagram, Twitter, Youtube, Mail, Phone } from "lucide-react";
-import hajductLogo from "@/assets/hajduct-logo.png";
+import hajductLogo from "@/assets/gallery/hajduct-logo.png";
 
 const Footer = () => {
   const socialLinks = [
@@ -35,8 +35,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-foreground/70 leading-relaxed mb-6 max-w-md">
-              Më shumë se 25 vjet mbajmë ngjyrat e kuqe dhe të zeza me krenari. 
-              Pasioni ynë, tradita jonë, familja jonë - kjo jemi ne, Hajduçt ultras.
+              Më shumë se 88 vjet mbajmë ngjyrat e kuqe dhe të zeza me krenari. 
+              Pasioni ynë, tradita jonë, familja jonë.
             </p>
             <div className="flex items-center gap-2 text-sm text-foreground/60">
               <Heart className="w-4 h-4 text-primary" />
@@ -44,7 +44,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="font-ultras text-lg text-primary mb-4">LIDHJE TË SHPEJTA</h3>
             <ul className="space-y-2">

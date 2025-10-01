@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Users, Calendar, Music, Camera } from "lucide-react";
 import { useState } from "react";
-import hajductLogo from "@/assets/hajduct-logo.png";
+import hajductLogo from "@/assets/gallery/hajduct-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +9,7 @@ const Header = () => {
   const navItems = [
     { name: "Rreth Nesh", href: "#about", icon: Users },
     { name: "Galeria", href: "#gallery", icon: Camera },
+    { name: "Galeria e Kombëtares", href: "#gallery", icon: Camera },
     { name: "Këngët", href: "#chants", icon: Music },
     { name: "Ngjarjet", href: "#events", icon: Calendar },
   ];
