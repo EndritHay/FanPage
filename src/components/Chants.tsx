@@ -6,31 +6,31 @@ const Chants = () => {
   const chants = [
     {
       id: 1,
-      title: "Himni i Hajduçt",
+      title: "Hajde o Hajduku jon",
       category: "Himn",
       icon: Crown,
-      lyrics: "E kuqe e zeza në zemër na djeg\nHajduçt klubi ynë, dashuria jonë është e vërtetë\nKurrë nuk do ndalemi, nëpër fitore e humbje\nNjë klub, një dashuri, përgjithmonë!"
+      lyrics: "Hajde hajde o Hajduku jon\nVeç per ty do te kendojme\nNuk ka asgje tjeter ne ket bote\nVeç per ty do te luftojme!"
     },
     {
       id: 2,
-      title: "Ne Jemi Këtu",
+      title: "Shehri",
       category: "Inkurajim",
       icon: Volume2,
-      lyrics: "Ne jemi këtu, gjithmonë këtu\nPër klubin tonë, nëpër gjithçka që jeta sjell\nKëndo me zë të lartë, mos ndalo kurrë\nHajduçt është krenaria jonë!"
+      lyrics: "Kujtou mir\nMos u nis\nHajduçt knej\nShehri t'prish!"
     },
     {
       id: 3,
-      title: "Krenaria e Kuqe-Zezë",
+      title: "shkau",
       category: "Krenari",
       icon: Heart,
-      lyrics: "E kuqe dhe e zeza mbahen me krenari\nNgjyra jonë, forca jonë\nAs stuhia nuk do na ndalojë\nHajduçt deri në fund!"
+      lyrics: "Hiqmu pi k***, largomu prej trolli\nTi q* dekmit serbi, kur dal prej kontrollit"
     },
     {
       id: 4,
-      title: "Stadiumi Gjëmon",
+      title: "Presheva",
       category: "Atmosferë",
       icon: Music,
-      lyrics: "Stadiumi gjëmon kur ne këndojmë\nKënga jonë ngrihet deri në qiell\nKundërshtarët dridhen kur na dëgjojnë\nHajduçt ultras, kurrë nuk pushon!"
+      lyrics: "Moj Presheva trime fatin Cameri \nJo s'te lejme jetime sa t'ket shqiptari"
     }
   ];
 
@@ -107,7 +107,7 @@ const Chants = () => {
         <div className="bg-card/30 rounded-lg p-8 border border-primary/20">
           <div className="text-center">
             <Music className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="font-ultras text-2xl text-primary mb-4">PROPONO NJË KËNGË TË RE</h3>
+            <h3 className="font-ultras text-2xl text-primary mb-4">THURRI DY VARGJE PER NE</h3>
             <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
               Ke një ide për një këngë të re që do të jehojë në stadium? 
               Na e dërgo propozimin dhe mund të bëhet pjesë e koleksionit tonë!
@@ -116,7 +116,14 @@ const Chants = () => {
               <Button variant="ultras">
                 DËRGO PROPOZIM
               </Button>
-              <Button variant="ultras-outline">
+              <Button variant="ultras-outline"
+                onClick={() => {
+                  document.getElementById('chants')?.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}>
+
                 <Music className="w-4 h-4 mr-2" />
                 TË GJITHA KËNGËT
               </Button>
