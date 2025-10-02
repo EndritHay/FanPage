@@ -58,7 +58,7 @@ const Events = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Ndiqni ngjarjet tona të ardhshme dhe bashkohuni me komunitetin ultras. 
+            Ndiqni ngjarjet tona të ardhshme dhe bashkohuni me grupin. 
             Çdo ngjarje është një mundësi për të treguar pasionin tonë!
           </p>
         </div>

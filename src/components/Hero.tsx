@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import hajductLogo from "@/assets/gallery/hajduct-logo.png";
 import ultrasHero from "@/assets/gallery/ultras-hero.jpg";
 import { useNavigate } from "react-router-dom";
+import About from "./About";
 const Hero = () => {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
@@ -101,7 +102,7 @@ const Hero = () => {
           </h1>
           
           <div className="text-xl md:text-2xl text-primary font-bold mb-2 tracking-wider animate-in fade-in slide-in-from-bottom duration-700 delay-200">
-            ULTRAS MENTALITY • PASION • TRADITË
+            ULTRAS MENTALITY • ANTI-ANTIFA • ACAB
           </div>
           
           <p className="text-lg md:text-xl text-foreground/90 mb-8 font-semibold animate-in fade-in slide-in-from-bottom duration-700 delay-300">
@@ -121,6 +122,12 @@ const Hero = () => {
 
             </Button>
             <Button 
+              onClick={() => {
+                document.getElementById('about')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
               variant="ultras-outline" 
               size="lg" 
               className="text-lg px-8 py-4 hover:scale-105 transition-transform hover:bg-primary/10"

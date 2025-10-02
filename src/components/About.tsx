@@ -16,13 +16,9 @@ const About = () => {
     {
       icon: Users,
       title: "VËLLAZËRIA",
-      description: "Ne nuk jemi vetëm tifozë - ne jemi familje. Një për të gjithë, të gjithë për një. Kjo është rruga jonë, kjo është jeta jonë."
+      description: "Ne nuk jemi vetëm tifozë të thjeshtë ne jemi familje. Një për të gjithë, të gjithë për një."
     },
-    {
-      icon: Trophy,
-      title: "FITORJA",
-      description: "Së bashku festojmë fitoret dhe së bashku kalojmë nëpër humbjet. Forca jonë është në bashkim."
-    }
+
   ];
 
   return (
