@@ -6,34 +6,34 @@ const Events = () => {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Derbiu - Hajduk kundër Dinamos",
-      date: "15.04.2024",
-      time: "20:00",
-      location: "Stadiumi Poljud",
+      title: "Mbledhja kunder shkive!",
+      date: "11.10.2025",
+      time: "19:30",
+      location: "Taverna Menata, Prishtinë",
       type: "Ndeshje",
-      description: "Derbiu më i madh i sezonit! Të gjithë në Poljud për të mbështetur tanët!",
+      description: "Ndeshja me e madhe e ksaj dekade për kombëtaren !",
       attendees: 245
     },
-    {
-      id: 2,
-      title: "Koreografia 'Zemra e Kuqe'",
-      date: "20.04.2024", 
-      time: "18:00",
-      location: "Tubim - Kafeja Central",
-      type: "Përgatitje",
-      description: "Përgatitje e koreografisë së re për finalin e kupës. Na duhen të gjitha duart!",
-      attendees: 89
-    },
-    {
-      id: 3,
-      title: "Transferta - Split away",
-      date: "28.04.2024",
-      time: "16:00", 
-      location: "Stacioni i autobusëve",
-      type: "Transfertë",
-      description: "Transport i organizuar për transfertën në Split. Regjistrimi i detyrueshëm!",
-      attendees: 156
-    }
+    // {
+    //   id: 2,
+    //   title: "Koreografia 'Zemra e Kuqe'",
+    //   date: "20.04.2024", 
+    //   time: "18:00",
+    //   location: "Tubim - Kafeja Central",
+    //   type: "Përgatitje",
+    //   description: "Përgatitje e koreografisë së re për finalin e kupës. Na duhen të gjitha duart!",
+    //   attendees: 89
+    // },
+    // {
+    //   id: 3,
+    //   title: "Transferta - Split away",
+    //   date: "28.04.2024",
+    //   time: "16:00", 
+    //   location: "Stacioni i autobusëve",
+    //   type: "Transfertë",
+    //   description: "Transport i organizuar për transfertën në Split. Regjistrimi i detyrueshëm!",
+    //   attendees: 156
+    // }
   ];
 
   const pastEvents = [
@@ -58,8 +58,8 @@ const Events = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-ultras mx-auto mb-6"></div>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Ndiqni ngjarjet tona të ardhshme dhe bashkohuni me grupin. 
-            Çdo ngjarje është një mundësi për të treguar pasionin tonë!
+            Ndiqni paraqitjet tona të ardhshme dhe bashkohuni me grupin. 
+            
           </p>
         </div>
 
