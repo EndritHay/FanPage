@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Join = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -26,11 +27,51 @@ const Join = () => {
     setStep(prev => prev - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would handle form submission
-    console.log('Form submitted:', formData);
-    setStep(4); // Show success message
+    
+    // Validate all fields are filled
+    if (!formData.name || !formData.age || !formData.city || !formData.phone || !formData.email || !formData.reason) {
+      alert('Ju lutemi plotësoni të gjitha fushat!');
+      return;
+    }
+    
+    try {
+      setLoading(true);
+      console.log('Sending registration data:', formData);
+
+      const response = await fetch('http://localhost:5000/api/join', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+      console.log('Server response:', data);
+
+      if (!response.ok) {
+        console.error('Server error response:', data);
+        alert(`Gabim: ${data.error || data.message || 'Registration failed'}`);
+        return;
+      }
+
+      console.log('Registration successful:', data);
+      setStep(4); 
+    } catch (error: any) {
+      console.error('Full error details:', error);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+      
+      if (error.message.includes('Failed to fetch')) {
+        alert('Nuk mund të lidhet me serverin. Sigurohuni që serveri po ekzekuton në portin 5000.');
+      } else {
+        alert(`Ka ndodhur një gabim: ${error.message}`);
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -62,7 +103,7 @@ const Join = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 animate-shimmer" />
 
           {step === 1 && (
-            <div className="space-y-6 animate-slide-up">
+            <div className="space-y-6 animate-slide-up relative z-10">
               <div>
                 <label className="text-sm font-medium mb-2 block">
                   Emri dhe Mbiemri
@@ -135,7 +176,7 @@ const Join = () => {
               </div>
               <Button 
                 onClick={handleNext}
-                className="w-full bg-primary hover:bg-primary/90 animate-fade-in"
+                className="w-full bg-primary hover:bg-primary/90"
               >
                 VAZHDO
                 <Send className="w-4 h-4 ml-2" />
@@ -144,7 +185,7 @@ const Join = () => {
           )}
 
           {step === 2 && (
-            <div className="space-y-6 animate-slide-up">
+            <div className="space-y-6 animate-slide-up relative z-10">
               <div>
                 <label className="text-sm font-medium mb-2 block">
                   Numri i Telefonit
@@ -189,7 +230,7 @@ const Join = () => {
           )}
 
           {step === 3 && (
-            <div className="space-y-6 animate-slide-up">
+            <div className="space-y-6 animate-slide-up relative z-10">
               <div>
                 <label className="text-sm font-medium mb-2 block">
                   Pse dëshiron të bashkohesh me ne?
@@ -212,9 +253,10 @@ const Join = () => {
                 </Button>
                 <Button 
                   onClick={handleSubmit}
+                  disabled={loading}
                   className="flex-1 bg-primary hover:bg-primary/90"
                 >
-                  DËRGO
+                  {loading ? 'DUKE DËRGUAR...' : 'DËRGO'}
                   <Send className="w-4 h-4 ml-2" />
                 </Button>
               </div>
@@ -222,7 +264,7 @@ const Join = () => {
           )}
 
           {step === 4 && (
-            <div className="text-center py-8 space-y-6 animate-fade-in">
+            <div className="text-center py-8 space-y-6 animate-fade-in relative z-10">
               <div className="animate-bounce">
                 <Heart className="w-16 h-16 text-primary mx-auto" />
               </div>
