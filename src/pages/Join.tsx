@@ -16,6 +16,7 @@ const Join = () => {
     city: '',
     phone: '',
     email: '',
+    password: '',
     reason: ''
   });
 
@@ -31,7 +32,7 @@ const Join = () => {
     e.preventDefault();
     
     // Validate all fields are filled
-    if (!formData.name || !formData.age || !formData.city || !formData.phone || !formData.email || !formData.reason) {
+    if (!formData.name || !formData.age || !formData.city || !formData.phone || !formData.email || !formData.password || !formData.reason) {
       alert('Ju lutemi plotësoni të gjitha fushat!');
       return;
     }
@@ -207,6 +208,19 @@ const Join = () => {
                   onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                   placeholder="email@example.com"
                   className="bg-background"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-2 block">
+                  Fjalëkalimi
+                </label>
+                <Input
+                  type="password"
+                  value={formData.password}
+                  onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
+                  placeholder="••••••••"
+                  className="bg-background"
+                  required
                 />
               </div>
               <div className="flex gap-4">

@@ -5,6 +5,7 @@ import hajductLogo from "@/assets/gallery/hajduct-logo.png";
 import ultrasHero from "@/assets/gallery/ultras-hero.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import About from "./About";
+import Login from "./Login";
 const Hero = () => {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);

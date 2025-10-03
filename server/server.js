@@ -90,6 +90,43 @@ app.post('/api/join', async (req, res) => {
   }
 });
 
+// Login route
+app.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    
+    // Log login attempt
+    console.log('🔐 Login attempt for:', email);
+    
+    // Find user by email
+    const user = await User.findOne({ email });
+    
+    // If user doesn't exist or password doesn't match
+    if (!user || user.password !== password) {
+      console.log('❌ Login failed: Invalid credentials');
+      return res.status(401).json({ error: 'Email ose fjalëkalimi i gabuar' });
+    }
+
+    console.log('✅ Login successful for user:', user.name);
+
+    // Return user data (except password)
+    const userData = {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      city: user.city
+    };
+
+    res.json({ 
+      message: 'Login successful',
+      user: userData 
+    });
+  } catch (error) {
+    console.error('❌ Login error:', error);
+    res.status(500).json({ error: 'Gabim në server. Ju lutemi provoni përsëri.' });
+  }
+});
+
 // Get all users route
 app.get('/api/users', async (req, res) => {
   try {
