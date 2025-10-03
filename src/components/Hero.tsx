@@ -3,7 +3,7 @@ import { ArrowDown, Flag, Heart, Flame, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import hajductLogo from "@/assets/gallery/hajduct-logo.png";
 import ultrasHero from "@/assets/gallery/ultras-hero.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import About from "./About";
 const Hero = () => {
   const navigate = useNavigate();
@@ -110,17 +110,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-in fade-in slide-in-from-bottom duration-700 delay-400">
-            <Button 
-              onClick={() => navigate('/join')}
-              variant="ultras" 
-              size="lg" 
-              className="text-lg px-8 py-4 relative overflow-hidden group hover:scale-105 transition-transform"
-            >
+            <Link to="/join">
+              <Button 
+                variant="ultras" 
+                size="lg" 
+                className="text-lg px-8 py-4 relative overflow-hidden group hover:scale-105 transition-transform"
+              >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 group-hover:animate-shimmer" />
               <Flag className="w-5 h-5 mr-2" />
               BASHKOHU ME NE
-
-            </Button>
+              </Button>
+            </Link>
             <Button 
               onClick={() => {
                 document.getElementById('about')?.scrollIntoView({ 
