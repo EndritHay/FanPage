@@ -1,10 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Users, Calendar, Music, Camera } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import hajductLogo from "@/assets/gallery/hajduct-logo.png";
-
+import { Link } from "react-router-dom";
+import Login from "../pages/Login";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    // Check for user data in localStorage
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      setUser(JSON.parse(userData));
+    }
+  }, []);
 
   const navItems = [
     { name: "Rreth Nesh", href: "#about", icon: Users },
@@ -42,10 +52,41 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="ultras" className="ml-4">
-              BASHKOHU
-            </Button>
+            {!user ? (
+              <>
+                <Link to="/join">
+                  <Button variant="ultras" className="ml-4">
+                    REGJISTROHU
+                  </Button>
+                </Link>
+
+                <Link to="/login">
+                  <Button variant="ultras" className="ml-4">
+                    KYÇU
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <div className="flex items-center gap-2 ml-4">
+                <span className="text-sm text-foreground/80">
+                  Mirë se erdhe, {user.name}
+                </span>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => {
+                    localStorage.removeItem('user');
+                    setUser(null);
+                    window.location.reload();
+                  }}
+                >
+                  DIL
+                </Button>
+              </div>
+            )}
           </div>
+
+          
 
           {/* Mobile Menu Toggle */}
           <Button
@@ -73,9 +114,32 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="ultras" className="mt-2">
-                BASHKOHU
-              </Button>
+              {!user ? (
+                <>
+                  <Link to="/join">
+                    <Button variant="ultras" className="mt-2 w-full">
+                      REGJISTROHU
+                    </Button>
+                  </Link>
+                  <Link to="/login">
+                    <Button variant="ultras" className="mt-2 w-full">
+                      KYÇU
+                    </Button>
+                  </Link>
+                </>
+              ) : (
+                <Button 
+                  variant="outline" 
+                  className="mt-2 w-full"
+                  onClick={() => {
+                    localStorage.removeItem('user');
+                    setUser(null);
+                    window.location.reload();
+                  }}
+                >
+                  DIL
+                </Button>
+              )}
             </div>
           </div>
         )}
