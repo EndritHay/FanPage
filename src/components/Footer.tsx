@@ -34,8 +34,7 @@ const Footer = () => {
               <div className="relative">
                 <img
                   src={hajductLogo}
-                  alt="Hajduçt Logo"
-                  className="w-16 h-16 object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                  className="w-1 h-1 object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
                 />
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
@@ -105,7 +104,7 @@ const Footer = () => {
                 <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
-                <span>Preshevë, Kosovë</span>
+                <span>Preshevë, Shqipëri</span>
               </div>
             </div>
 
