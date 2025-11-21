@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { Lock, Mail, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -64,14 +66,21 @@ const Login = () => {
       // Save user data to localStorage
       localStorage.setItem('user', JSON.stringify(data.user));
       
-      // Show success message
-      alert('Mirë se erdhe ' + data.user.name + '!');
+      // Show success toast
+      toast({
+        title: "Mirë se erdhe!",
+        description: `Kyçja u krye me sukses, ${data.user.name}!`,
+      });
       
       // Navigate to home
-      navigate('/');
+      setTimeout(() => navigate('/'), 500);
     } catch (error: any) {
       console.error('Login error:', error);
-      alert(error.message || 'Ka ndodhur një gabim. Ju lutemi provoni përsëri.');
+      toast({
+        variant: "destructive",
+        title: "Gabim në kyçje",
+        description: error.message || 'Ka ndodhur një gabim. Ju lutemi provoni përsëri.',
+      });
     } finally {
       setLoading(false);
     }

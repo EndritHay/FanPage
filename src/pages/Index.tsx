@@ -2,9 +2,10 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
-import Chants from "@/components/Chants";
+import Shop from "@/components/Shop";
 import Events from "@/components/Events";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -13,9 +14,10 @@ const Index = () => {
       <Hero />
       <About />
       <Gallery />
-      <Chants />
+      <Shop />
       <Events />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 };

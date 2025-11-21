@@ -5,9 +5,11 @@ import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { Flag, Users, Heart, ArrowLeft, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Join = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,7 +35,11 @@ const Join = () => {
     
     // Validate all fields are filled
     if (!formData.name || !formData.age || !formData.city || !formData.phone || !formData.email || !formData.password || !formData.reason) {
-      alert('Ju lutemi plotësoni të gjitha fushat!');
+      toast({
+        variant: "destructive",
+        title: "Fusha të paplotësuara",
+        description: 'Ju lutemi plotësoni të gjitha fushat!',
+      });
       return;
     }
     
@@ -59,6 +65,10 @@ const Join = () => {
       }
 
       console.log('Registration successful:', data);
+      toast({
+        title: "Regjistrimi u krye me sukses!",
+        description: "Mirë se erdhe në familje! Tani mund të kyçeni.",
+      });
       setStep(4); 
     } catch (error: any) {
       console.error('Full error details:', error);
@@ -66,9 +76,17 @@ const Join = () => {
       console.error('Error stack:', error.stack);
       
       if (error.message.includes('Failed to fetch')) {
-        alert('Nuk mund të lidhet me serverin. Sigurohuni që serveri po ekzekuton në portin 5000.');
+        toast({
+          variant: "destructive",
+          title: "Gabim në lidhje",
+          description: 'Nuk mund të lidhet me serverin. Sigurohuni që serveri po ekzekuton në portin 5000.',
+        });
       } else {
-        alert(`Ka ndodhur një gabim: ${error.message}`);
+        toast({
+          variant: "destructive",
+          title: "Gabim",
+          description: error.message,
+        });
       }
     } finally {
       setLoading(false);

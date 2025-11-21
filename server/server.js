@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from 'path';
 import User from './models/User.js';
+import Event from './models/Event.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -44,7 +45,7 @@ app.post('/api/join', async (req, res) => {
     // Validate required fields
     const requiredFields = ['name', 'age', 'city', 'phone', 'email', 'reason'];
     const missingFields = requiredFields.filter(field => !req.body[field]);
-    
+
     if (missingFields.length > 0) {
       console.log('❌ Missing fields:', missingFields);
       return res.status(400).json({
@@ -56,9 +57,9 @@ app.post('/api/join', async (req, res) => {
     // Create and save new user
     const newUser = new User(req.body);
     const savedUser = await newUser.save();
-    
+
     console.log('✅ User saved successfully:', savedUser);
-    
+
     res.status(201).json({
       message: 'Registration successful',
       user: savedUser
@@ -94,13 +95,13 @@ app.post('/api/join', async (req, res) => {
 app.post('/api/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    
+
     // Log login attempt
     console.log('🔐 Login attempt for:', email);
-    
+
     // Find user by email
     const user = await User.findOne({ email });
-    
+
     // If user doesn't exist or password doesn't match
     if (!user || user.password !== password) {
       console.log('❌ Login failed: Invalid credentials');
@@ -117,9 +118,9 @@ app.post('/api/login', async (req, res) => {
       city: user.city
     };
 
-    res.json({ 
+    res.json({
       message: 'Login successful',
-      user: userData 
+      user: userData
     });
   } catch (error) {
     console.error('❌ Login error:', error);
@@ -134,6 +135,112 @@ app.get('/api/users', async (req, res) => {
     res.json(users);
   } catch (error) {
     console.error('Error fetching users:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// ==================== EVENT PROPOSAL ROUTES ====================
+
+// Create new event proposal
+app.post('/api/events/propose', async (req, res) => {
+  try {
+    console.log('📅 Received event proposal:', req.body);
+
+    // Validate required fields
+    const requiredFields = ['title', 'description', 'location', 'date'];
+    const missingFields = requiredFields.filter(field => !req.body[field]);
+
+    if (missingFields.length > 0) {
+      console.log('❌ Missing fields:', missingFields);
+      return res.status(400).json({
+        error: 'Missing required fields',
+        fields: missingFields
+      });
+    }
+
+    // Create and save new event
+    const newEvent = new Event(req.body);
+    const savedEvent = await newEvent.save();
+
+    console.log('✅ Event saved successfully:', savedEvent);
+
+    res.status(201).json({
+      message: 'Event proposal submitted successfully',
+      event: savedEvent
+    });
+
+  } catch (error) {
+    console.error('❌ Error saving event:', error);
+
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({
+        error: 'Validation Error',
+        details: Object.values(error.errors).map(err => err.message)
+      });
+    }
+
+    res.status(500).json({
+      error: 'Server Error',
+      message: 'Internal server error, please try again'
+    });
+  }
+});
+
+// Get all events
+app.get('/api/events', async (req, res) => {
+  try {
+    const { status } = req.query;
+    const filter = status ? { status } : {};
+
+    const events = await Event.find(filter).sort({ date: 1 });
+    console.log(`📋 Fetched ${events.length} events`);
+
+    res.json(events);
+  } catch (error) {
+    console.error('❌ Error fetching events:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get single event by ID
+app.get('/api/events/:id', async (req, res) => {
+  try {
+    const event = await Event.findById(req.params.id);
+
+    if (!event) {
+      return res.status(404).json({ error: 'Event not found' });
+    }
+
+    res.json(event);
+  } catch (error) {
+    console.error('❌ Error fetching event:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Update event status (approve/reject)
+app.patch('/api/events/:id/status', async (req, res) => {
+  try {
+    const { status } = req.body;
+
+    if (!['pending', 'approved', 'rejected'].includes(status)) {
+      return res.status(400).json({ error: 'Invalid status' });
+    }
+
+    const event = await Event.findByIdAndUpdate(
+      req.params.id,
+      { status },
+      { new: true }
+    );
+
+    if (!event) {
+      return res.status(404).json({ error: 'Event not found' });
+    }
+
+    console.log(`✅ Event ${req.params.id} status updated to: ${status}`);
+    res.json(event);
+  } catch (error) {
+    console.error('❌ Error updating event:', error);
     res.status(500).json({ error: error.message });
   }
 });
